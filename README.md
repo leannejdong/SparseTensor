@@ -4,7 +4,7 @@
 ## Dependency
  * GCC10 
 
- * CMake (> 3.00)
+ * CMake (> 3.00) and GNU Build System (a.k.a. Make)
    
  * C++20
    
