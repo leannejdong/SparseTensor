@@ -1,8 +1,14 @@
 # A very simple sparse matrix/tensor library
 (Work in Progress)
-## Demo
+## Demo  
 
-```
+### Dependency
+ gcc10 and above, C++20, `{fmt}`
+### Instruction 
+* Copy codes below, save it in a file `testlib.cpp` in a directory parallel to the SparseTensor directory.
+
+
+```cpp
 #include"SparseTensor/include/matrix.h"
 #include"SparseTensor/include/SparseTensor.h"
 #include"SparseTensor/include/util.h"

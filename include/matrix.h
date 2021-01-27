@@ -30,5 +30,4 @@ namespace SparseTensor {
     matrix operator*(const matrix &m1, const matrix &m2);
 }
 
-//void test();
 #endif ///SPARSETENSORLIB_LIBRARY_H
