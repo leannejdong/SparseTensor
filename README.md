@@ -1,5 +1,5 @@
 # A very simple sparse matrix/tensor library
-
+(Work in Progress)
 ## Demo
 
 ```
@@ -16,8 +16,8 @@ using std::vector;
 constexpr int M = 5;
 constexpr int N = 5;
 using SparseTensor::SparseMatrixEntry;
-//using SparseTensor::ostream;
-//using SparseTensor::nested_print;
+using SparseTensor::operator<<;
+using SparseTensor::nested_print;
 using SparseTensor::MatMultiply;
 using SparseTensor::SparseMul;
 using SparseTensor::KroneckersProduct;
@@ -42,9 +42,7 @@ int main()
     vs.emplace_back(SparseMatrixEntry(2, 3, a[2][3]));
     vs.emplace_back(SparseMatrixEntry(4, 3, a[4][3]));
     vs.emplace_back(SparseMatrixEntry(4, 4, a[4][4]));
-    //nested_print(std::span(vs));
-    SparseTensor::nested_print(vs);
-   // std::cout << vs << "\n";
+    std::cout << vs << "\n";
     std::cerr << "Convert sparse data structure to dense" << "\n";
 
     vector<SparseMatrixEntry> d;
@@ -56,8 +54,8 @@ int main()
     d.emplace_back(SparseMatrixEntry(2, 3, 1));
     d.emplace_back(SparseMatrixEntry(4, 2, 14));
     d.emplace_back(SparseMatrixEntry(4, 4, 8));
-//    std::cout << d;
-//    std::cout << "\n";
+    std::cout << d;
+    std::cout << "\n";
 
     std::vector<std::vector<int>> vd(M, std::vector <int> (N, 0));
     vd[0][1] = d[0].value;
@@ -68,8 +66,7 @@ int main()
     vd[2][3] = d[5].value;
     vd[4][2] = d[6].value;
     vd[4][4] = d[7].value;
-//    nested_print(std::span(vd));
-   // std::cout << vd;
+    std::cout << vd;
 
     std::cerr << "Perform matrix multiplication of 2D arrays: " << "\n";
     vector<vector<Value>> A {{{0, 3, 0, 0, 0}, {22, 0, 0, 0, 17},
@@ -79,7 +76,7 @@ int main()
                                      {7, 5, 0, 1, 0}, {0, 0, 0, 0, 0}, {0, 0, 14, 0, 8}}};
 
     vector<vector<Value>> C = SparseMul(A, B);
-   // std::cout << C;
+    std::cout << C;
 
 //    vector<vector<Value>> I1 {{{1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}}};
 //
@@ -88,21 +85,18 @@ int main()
 //    vector<vector<Value>> I3 = SparseMul(I1, I2);
 //    std::cout << I3;
     Matrix D = MatMultiply(A, B);
-   // std::cout << D;
+    std::cout << D;
 
     std::cerr << "Compute kronecker products of 2 multidimensional arrays: " << "\n";
     Matrix m1{{1, 2}, {3, 4}, {1, 0}};
     Matrix m2{{0, 5, 2}, {6, 7, 3}};
 
     Matrix v(KroneckersProduct(m1, m2));
-//    nested_print(std::span(v));
-
+    std::cout << v;
     std::cerr << "Compute kronecker outer products of 2 multidimensional arrays: " << "\n";
 
     Tensor m(KroneckersOuterProduct(m1, m2));
-
-  //  nested_print(std::span(m));
-//    fmt::print("Hello, world!\n");
+    nested_print(std::span(m));
 
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -132,5 +126,5 @@ int main()
     }
 }
 
-//g++-10 -std=c++2a -o sparse testlib.cpp SparseTensor/src/SparseTensor.cpp SparseTensor/src/matrix.cpp -lfmt
+//g++-10 -std=c++2a -o sparse testlib.cpp SparseTensor/src/SparseTensor.cpp -lfmt
 ```
