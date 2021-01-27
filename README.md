@@ -1,8 +1,7 @@
 # A very simple sparse matrix/tensor library
 (Work in Progress)
-## Demo  
 
-### Dependency
+## Dependency
  * gcc10 
    
  * C++20
@@ -10,12 +9,27 @@
  * fast open-source formatting library
    [`{fmt}`](https://github.com/fmtlib/fmt)
 
-### Instruction 
+## Instruction 
 * Copy codes below, save it in a file `testlib.cpp` in a directory parallel to the SparseTensor directory.
 
-* To build, execute `make` from terminal
+* To build, use the following makefile
+```makefile
+CXX=g++-10
+CXXFLAGS=-std=c++2a -MD
+sparse: testlib.o SparseTensor/src/SparseTensor.o
+>-------$(CXX) -o $@ $^ -lfmt
+
+clean:
+>-------rm -f *.o sparse SparseTensor/src/*.o
+
+-include *.d
+-include SparseTensor/src/*.d
+```
+execute `make` from terminal to build. Use `make clean` to clean auxiliary files (if needed).
 
 * To run, execute `./sparse` or `./sparse >file.txt 2>&1` to redirect all terminal output to a file.
+
+## Demo
 
 ```cpp
 #include"SparseTensor/include/matrix.h"
@@ -143,3 +157,5 @@ int main()
 
 //g++-10 -std=c++2a -o sparse testlib.cpp SparseTensor/src/SparseTensor.cpp -lfmt
 ```
+
+
