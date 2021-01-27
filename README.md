@@ -3,10 +3,19 @@
 ## Demo  
 
 ### Dependency
- gcc10 and above, C++20, `{fmt}`
+ * gcc10 
+   
+ * C++20
+   
+ * fast open-source formatting library
+   [`{fmt}`](https://github.com/fmtlib/fmt)
+
 ### Instruction 
 * Copy codes below, save it in a file `testlib.cpp` in a directory parallel to the SparseTensor directory.
 
+* To build, execute `make` from terminal
+
+* To run, execute `./sparse` or `./sparse >file.txt 2>&1` to redirect all terminal output to a file.
 
 ```cpp
 #include"SparseTensor/include/matrix.h"
