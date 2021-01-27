@@ -7,7 +7,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
-//#include <span>
+#include <span>
 #include <type_traits>
 #include <fmt/format.h>
 //#include "format.h"
@@ -49,21 +49,21 @@ namespace SparseTensor {
         return os1;
     }
 
-//    template<typename T>
-//    concept Arithmetic = std::floating_point<T> || std::integral<T>;
+    template<typename T>
+    concept Arithmetic = std::floating_point<T> || std::integral<T>;
 
-//    template<Arithmetic T>
-//    inline void nested_print(std::span<T> vector) {
-    inline void nested_print(const std::vector<double>& vector) {
+    template<Arithmetic T>
+    inline void nested_print(std::span<T> vector) {
+//    inline void nested_print(const std::vector<double>& vector) {
         fmt::print("[{}]", fmt::join(vector.begin(), vector.end(), ", "));
     }
 
     template<typename T>
-//    inline void nested_print(std::span<T> tensor) requires (!Arithmetic<T>) {
-    inline void nested_print(const T& tensor) {
+    inline void nested_print(std::span<T> tensor) requires (!Arithmetic<T>) {
+ //   inline void nested_print(const T& tensor) {
         fmt::print("[");
-      //  for (std::span curr_tensor : tensor) {
-      for (auto &curr_tensor : tensor) {
+        for (std::span curr_tensor : tensor) {
+      //for (auto &curr_tensor : tensor) {
             nested_print(curr_tensor);
             fmt::print("\n");
         }
