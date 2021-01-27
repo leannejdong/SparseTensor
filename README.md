@@ -1,8 +1,10 @@
-# A very simple sparse matrix/tensor library
+# Naïve sparse matrix/tensor library
 (Work in Progress)
 
 ## Dependency
- * gcc10 
+ * GCC10 
+
+ * CMake (> 3.00)
    
  * C++20
    
