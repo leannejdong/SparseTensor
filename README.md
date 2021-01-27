@@ -4,12 +4,14 @@
 ## Dependency
  * GCC10 
 
- * CMake (> 3.00) and GNU Build System (a.k.a. Make)
+ * GNU Build System (a.k.a. Make)
    
  * C++20
    
  * fast open-source formatting library
    [`{fmt}`](https://github.com/fmtlib/fmt)
+
+(CMake was used to generate documentation, can be safely ignored)
 
 ## Instruction 
 * Copy codes below, save it in a file `testlib.cpp` in a directory parallel to the SparseTensor directory.
