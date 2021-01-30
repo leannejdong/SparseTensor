@@ -91,7 +91,7 @@ int main()
     std::cout << d;
     std::cout << "\n";
 
-    std::vector<std::vector<int>> vd(M, std::vector <int> (N, 0));
+    vector<std::vector<int>> vd(M, vector <int> (N, 0));
     vd[0][1] = d[0].value;
     vd[1][0] = d[1].value;
     vd[1][4] = d[2].value;
@@ -242,11 +242,11 @@ void case1()
 
     cout << "Please enter a 2D array: " << "\n";
 
-    for (int i = 0; i < M; ++i)
+    for (auto &row : a)
     {
-        for (int j = 0; j < N; ++j)
+        for (auto &col : row)
         {
-            std::cin >> a[i][j];
+            std::cin >> col;
         }
     }
     vector<SparseMatrixEntry> vs;
@@ -301,21 +301,21 @@ void case3()
 
     cout << "Please enter a 2D array A: " << "\n";
 
-    for (int i = 0; i < M; ++i)
+    for (auto &row : A)
     {
-        for (int j = 0; j < N; ++j)
+        for (auto &col : row)
         {
-            std::cin >> A[i][j];
+            std::cin >> col;
         }
     }
 
     cout << "Please enter a 2D array B: " << "\n";
 
-    for (int i = 0; i < M; ++i)
+    for (auto &row : B)
     {
-        for (int j = 0; j < N; ++j)
-        {
-            std::cin >> B[i][j];
+        for (auto &col : row)
+        { 
+            std::cin >> col;
         }
     }
 
@@ -337,19 +337,19 @@ void case4()
     Matrix m1(M, vector<int>(N, 0));
     Matrix m2(M, vector<int>(N, 0));
     cout << "Please enter the first matrix for KroneckersProduct: " << "\n";
-    for (int i = 0; i < m1.size(); ++i)
+    for (auto &row : m1)
     {
-        for (int j = 0; j < m1[0].size(); ++j)
-        {
-            std::cin >> m1[i][j];
+        for (auto &col : row)
+        { 
+            std::cin >> col;
         }
     }
     cout << "Please enter the second matrix for KroneckersProduct: " << "\n";
-    for (int i = 0; i < m2.size(); ++i)
+    for (auto &row : m2)
     {
-        for (int j = 0; j < m2[0].size(); ++j)
-        {
-            std::cin >> m2[i][j];
+        for (auto &col : row)
+        { 
+            std::cin >> col;
         }
     }
 
@@ -361,19 +361,19 @@ void case5()
     Matrix m1(M, vector<int>(N, 0));
     Matrix m2(M, vector<int>(N, 0));
     cout << "Please enter the first matrix for KroneckersOuterProduct: " << "\n";
-    for (int i = 0; i < m1.size(); ++i)
+    for (auto &row : m1)
     {
-        for (int j = 0; j < m1[0].size(); ++j)
+        for (auto &col : row)
         {
-            std::cin >> m1[i][j];
+            std::cin >> col;
         }
     }
     cout << "Please enter the second matrix for KroneckersOuterProduct: " << "\n";
-    for (int i = 0; i < m2.size(); ++i)
+    for (auto &row : m2)
     {
-        for (int j = 0; j < m2[0].size(); ++j)
+        for (auto &col : row))
         {
-            std::cin >> m2[i][j];
+            std::cin >> col;
         }
     }
     
