@@ -5,6 +5,7 @@
 #include <iostream>
 #include <cassert>
 #include <map>
+#include <vector>
 using std::cerr;
 namespace SparseTensor {
     template<typename T1, typename T2>

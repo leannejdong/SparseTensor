@@ -3,6 +3,7 @@
  */
 
 #include "../include/SparseTensor.h"
+#include "../include/matrix.h"
 #include <algorithm>
 #include <ranges>
 
@@ -21,13 +22,19 @@ namespace SparseTensor {
         for (auto& v4 : result) {
             v4.resize(n4);
         }
-        for (std::size_t row(0); row < result.size(); ++row) {
-            for (std::size_t col(0); col < result[0].size(); ++col) {
-                for (std::size_t inner = 0; inner < m2.size(); ++inner) {
-                    result[row][col] += m1[row][inner] * m2[inner][col];
-                }
+//        for (std::size_t row(0); row < result.size(); ++row) {
+//            for (std::size_t col(0); col < result[0].size(); ++col) {
+//                for (std::size_t inner = 0; inner < m2.size(); ++inner) {
+//                    result[row][col] += m1[row][inner] * m2[inner][col];
+//                }
+//            }
+//        }
+        forEachElement(result, [&](auto& element, const size_t row, const size_t col){
+            for(std::size_t inner(0); inner < m2.size(); ++inner){
+                element += m1[row][inner] * m2[inner][col];
             }
-        }
+        });
+        //https://godbolt.org/z/Gjnh91
 
         return result;
     }
@@ -90,6 +97,15 @@ namespace SparseTensor {
             }
         }
         return result;
+    }
+
+    inline void forEachElement(vector<vector<int>> &m, const auto &f)
+    {
+        for (size_t row(0); row < m.size(); ++row) {
+            for (size_t col(0); col < m[0].size(); ++col) {
+                f(m[row][col], row, col);
+            }
+        }
     }
 
 
