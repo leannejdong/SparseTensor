@@ -160,14 +160,15 @@ SparseTensor/src/SparseTensor.o: SparseTensor/src/SparseTensor.cpp \
  /usr/include/c++/10/array /usr/include/c++/10/bits/uses_allocator.h \
  /usr/include/c++/10/bits/invoke.h \
  /usr/include/c++/10/bits/stl_multimap.h \
- /usr/include/c++/10/bits/erase_if.h SparseTensor/src/../include/util.h \
- /usr/include/c++/10/sstream /usr/include/c++/10/bits/sstream.tcc \
- /usr/include/c++/10/vector /usr/include/c++/10/bits/stl_uninitialized.h \
+ /usr/include/c++/10/bits/erase_if.h /usr/include/c++/10/vector \
+ /usr/include/c++/10/bits/stl_uninitialized.h \
  /usr/include/c++/10/bits/stl_vector.h \
  /usr/include/c++/10/bits/stl_bvector.h \
- /usr/include/c++/10/bits/vector.tcc /usr/include/c++/10/span \
- /usr/include/fmt/format.h /usr/include/fmt/core.h \
- /usr/include/c++/10/cstring /usr/include/string.h /usr/include/strings.h \
+ /usr/include/c++/10/bits/vector.tcc SparseTensor/src/../include/util.h \
+ /usr/include/c++/10/sstream /usr/include/c++/10/bits/sstream.tcc \
+ /usr/include/c++/10/span /usr/include/fmt/format.h \
+ /usr/include/fmt/core.h /usr/include/c++/10/cstring \
+ /usr/include/string.h /usr/include/strings.h \
  /usr/include/c++/10/iterator /usr/include/c++/10/bits/stream_iterator.h \
  /usr/include/c++/10/algorithm /usr/include/c++/10/bits/ranges_algo.h \
  /usr/include/c++/10/bits/ranges_algobase.h /usr/include/c++/10/ranges \
@@ -210,4 +211,5 @@ SparseTensor/src/SparseTensor.o: SparseTensor/src/SparseTensor.cpp \
  /usr/include/c++/10/bits/atomic_base.h \
  /usr/include/c++/10/bits/atomic_lockfree_defines.h \
  /usr/include/c++/10/backward/auto_ptr.h /usr/include/c++/10/bit \
- /usr/include/c++/10/pstl/glue_memory_defs.h
+ /usr/include/c++/10/pstl/glue_memory_defs.h \
+ SparseTensor/src/../include/matrix.h

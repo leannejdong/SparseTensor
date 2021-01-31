@@ -99,14 +99,7 @@ namespace SparseTensor {
         return result;
     }
 
-    inline void forEachElement(vector<vector<int>> &m, const auto &f)
-    {
-        for (size_t row(0); row < m.size(); ++row) {
-            for (size_t col(0); col < m[0].size(); ++col) {
-                f(m[row][col], row, col);
-            }
-        }
-    }
+
 
 
 }

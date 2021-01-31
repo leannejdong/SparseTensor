@@ -20,7 +20,15 @@ namespace SparseTensor{
     Matrix KroneckersProduct(const Matrix &v1, const Matrix &v2);
     Tensor KroneckersOuterProduct(const Matrix &m1, const Matrix &m2);
 
-    void forEachElement(Matrix &m, const auto &f);
+
+    void forEachElement(Matrix &m, const auto &f)
+    {
+        for (size_t row(0); row < m.size(); ++row) {
+            for (size_t col(0); col < m[0].size(); ++col) {
+                f(m[row][col], row, col);
+            }
+        }
+    }
 
 }
 
